@@ -1,5 +1,13 @@
 function App(){
+    const title = 'Blog Post'
+    const body = 'This is my blog post'
     return (
-        <h1>Hello from the app component</h1>
+        <div class='container'>
+         <h1>{title}</h1>
+         <p>{body}</p>
+        </div>
+        
     )
 }
+
+export default App
