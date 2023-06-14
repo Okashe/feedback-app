@@ -3,11 +3,15 @@ import {FaTimes} from 'react-icons/fa'
 import Card from "./shared/Card"
 
 const FeedbackItem = ({feedback }) => {
+
+  const handleClick = (id) => {
+    console.log(id)
+  }
   return (
     <Card>
         <div className="num-display">{feedback.rating}</div>
         <button
-          onClick={() => console.log(feedback.id)}
+          onClick={()=>handleClick(feedback.id)}
           className="close">
              <FaTimes color ='purple' />
           </button>
