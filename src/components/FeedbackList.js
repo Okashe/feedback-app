@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import FeedbackItem from "./FeedbackItem"
 
-const FeedbackList = ({feedback}) => {
+const FeedbackList = ({feedback, handleDelete}) => {
 
  if(!feedback || feedback.legnth===0){
     return <p>No Feedback yet</p>
@@ -10,7 +10,7 @@ const FeedbackList = ({feedback}) => {
         <div className="feedback-list">
             {feedback.map(fb => (
                 <FeedbackItem key ={fb.id} feedback={fb}
-                handleDelete ={(id)=> console.log(fb.id)} />
+                handleDelete ={handleDelete} />
             ))}
         </div>
       )
