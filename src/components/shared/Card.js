@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Card = ({children}) => {
+const Card = ({children, reverse}) => {
+  // return <div{`card ${reverse && 'reverse'}`}>{children}</div>
   return (
-    <div className='card'>{children}</div>
+    <div className='card' style={{
+      backgroundColor: reverse ? 'rgba(0,0,0,0.4)': '#fff',
+      color: reverse ? '#fff' : '#000',
+    }}>{children}</div>
   )
 }
 
