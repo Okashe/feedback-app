@@ -1,4 +1,4 @@
-import FeedbackData from "../data/FeedbackData"
+import PropTypes from 'prop-types'
 import FeedbackItem from "./FeedbackItem"
 
 const FeedbackList = ({feedback}) => {
@@ -9,12 +9,22 @@ const FeedbackList = ({feedback}) => {
     return (
         <div className="feedback-list">
             {feedback.map(fb => (
-                <FeedbackItem key ={ fb.id} feedback={fb} />
+                <FeedbackItem key ={fb.id} feedback={fb} />
             ))}
         </div>
       )
  }
   
+}
+
+FeedbackList.propTypes = {
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+  })
+  ),
 }
 
 export default FeedbackList
