@@ -9,7 +9,8 @@ const FeedbackList = ({feedback}) => {
     return (
         <div className="feedback-list">
             {feedback.map(fb => (
-                <FeedbackItem key ={fb.id} feedback={fb} />
+                <FeedbackItem key ={fb.id} feedback={fb}
+                handleDelete ={(id)=> console.log(fb.id)} />
             ))}
         </div>
       )
