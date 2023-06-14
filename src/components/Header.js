@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-const Header = ({text}) => {
+const Header = ({text, bgColor, textColor }) => {
     const headerStyles = {
-        backgroundColor: 'blue', 
-        color:'red',
+        backgroundColor: bgColor, 
+        color:textColor,
     }
   return (
     <header style={headerStyles}>
