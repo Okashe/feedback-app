@@ -1,6 +1,7 @@
 function App(){
     const title = 'Blog Post'
     const body = 'This is my blog post'
+    const showComments = false;
     const comments =[
         {id:1, text: 'Comment one'},
         {id:2, text: 'Comment two'},
@@ -10,8 +11,8 @@ function App(){
         <div class='container'>
          <h1>{title.toUpperCase()}</h1>
          <p>{body}</p>
-        
-        <div className="comments">
+        {showComments ?(
+            <div className="comments">
             <h3>Comments({comments.length})</h3>
             <ul>
             {comments.map((comment, index)=>{
@@ -21,6 +22,8 @@ function App(){
             })}
          </ul>
         </div>
+        ):'No'}
+        
         
         </div>
         
