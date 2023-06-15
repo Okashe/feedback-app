@@ -14,14 +14,14 @@ const FeedbackList = () => {
         <div className="feedback-list">
           <AnimatePresence>
            
-            {feedback.map(fb => (
+            {feedback.map(item => (
                <motion.div 
-                  key={fb.id}
+                  key={item.id}
                   initial = {{opacity: 0}}
                   animate ={{opacity:1}}
                   exit ={{opacity:0}}
                >
-                <FeedbackItem key ={fb.id} feedback={fb}/>
+                <FeedbackItem key ={item.id} feedback={item}/>
                </motion.div>
             ))}
             

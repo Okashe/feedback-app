@@ -1,8 +1,15 @@
-import { useState } from "react"
+import { useState , useContext, useEffect} from "react"
+import FeedbackContext from "../conetxt/FeedbackContext"
 
 const RatingSelect = ({select}) => {
+    const {feedbackEdit} = useContext(FeedbackContext)
+
     const [selected , setSelected] = useState(10)
 
+    useEffect(()=>{
+      setSelected(feedbackEdit.item.rating)
+    },[feedbackEdit])
+    
     const handleChange = (e) => {
       setSelected(+e.currentTarget.value)
       select(+e.currentTarget.value)
