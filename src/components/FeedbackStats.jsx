@@ -1,6 +1,11 @@
-import PropTypes from 'prop-types'
 
-const FeedbackStats = ({feedback}) => {
+import { useContext } from 'react'
+import FeedbackContext from '../conetxt/FeedbackContext'
+
+
+const FeedbackStats = () => {
+ const {feedback} = useContext(FeedbackContext)
+
 let averageRating = feedback.reduce((a, f)=> a + f.rating ,0)/feedback.length
 averageRating = averageRating.toFixed(1).replace(/[.,]0$/,'')//removes .0
 
@@ -13,8 +18,6 @@ averageRating = averageRating.toFixed(1).replace(/[.,]0$/,'')//removes .0
   )
 }
 
-FeedbackStats.propTypes = {
-    feedback: PropTypes.array.isRequired,
-}
+
 
 export default FeedbackStats

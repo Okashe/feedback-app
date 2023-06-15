@@ -1,8 +1,11 @@
 import {motion, AnimatePresence} from 'framer-motion'
-import PropTypes from 'prop-types'
+import { useContext } from 'react'
 import FeedbackItem from "./FeedbackItem"
+import FeedbackContext from '../conetxt/FeedbackContext'
 
-const FeedbackList = ({feedback, handleDelete}) => {
+const FeedbackList = () => {
+
+  const {feedback} = useContext(FeedbackContext)
 
  if(!feedback || feedback.legnth === 0){
     return <p>No Feedback yet</p>
@@ -18,8 +21,7 @@ const FeedbackList = ({feedback, handleDelete}) => {
                   animate ={{opacity:1}}
                   exit ={{opacity:0}}
                >
-                <FeedbackItem key ={fb.id} feedback={fb}
-                handleDelete ={handleDelete} />
+                <FeedbackItem key ={fb.id} feedback={fb}/>
                </motion.div>
             ))}
             
@@ -32,14 +34,6 @@ const FeedbackList = ({feedback, handleDelete}) => {
   
 }
 
-FeedbackList.propTypes = {
-  feedback: PropTypes.arrayOf(
-    PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-  })
-  ),
-}
+
 
 export default FeedbackList
