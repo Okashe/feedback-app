@@ -194,9 +194,8 @@ input:focus {
   right: 20px;
   color: #fff;
   cursor: pointer;
-  
-  /* display: flex;
-  justify-content: flex-end;  */
+  display: flex;
+  justify-content: flex-end; 
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
