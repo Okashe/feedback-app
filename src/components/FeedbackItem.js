@@ -17,7 +17,7 @@ const FeedbackItem = ({feedback}) => {
           <button onClick={()=>editFeedback(feedback)} className='edit'>
              <FaEdit color='purple' />
           </button>
-          <div>{feedback.text}</div>
+       
         <div className="text-display">{feedback.text}</div>
     </Card>
   )

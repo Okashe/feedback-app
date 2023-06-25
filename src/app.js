@@ -18,9 +18,16 @@ function App(){
                 <Route exact path='/'
                   element={
                     <>
-                      <FeedbackForm/>
-                      <FeedbackStats />
-                      <FeedbackList />
+                      <div className='form'>
+                        <FeedbackForm/>
+                      </div>
+                     <div className='statistics'>
+                     <FeedbackStats />
+                     </div>
+                     <div className='feedbacklist'>
+                     <FeedbackList />
+                     </div>
+                     
                     </>
                   }
                 >
